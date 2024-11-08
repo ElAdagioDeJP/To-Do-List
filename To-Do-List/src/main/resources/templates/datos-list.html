@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+ <head>
+     <title>To-Do-List</title>
+ </head>
+ <body>
+     <h1>To-Do-list</h1>
+     <table>
+         <thead>
+             <tr>
+                 <th>ID</th>
+                 <th>Texto</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr th:each="dato : ${datos}">
+                 <td th:text="${datos.id}"></td>
+                 <td th:text="${datos.texto}"></td>
+                 <td>
+                     <a th:href="@{/datos/editar/{id}(id=${persona.id})}">Editar</a>
+                     <a th:href="@{/datos/eliminar/{id}(id=${persona.id})}">Eliminar</a>
+                 </td>
+             </tr>
+         </tbody>
+     </table>
+     <a href="/datos/nuevo">Nueva Persona</a>
+ </body>
+ </html>
