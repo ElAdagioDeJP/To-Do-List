@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border: 0.4vh solid black;
+    margin: 2% 2vw;
+    font-size: 4vh;
+    background-color: aliceblue;
+    position: relative; /* IMPORTANTE: para que los elementos absolutos (como .delete) se posicionen en relación con este */
+  }
+  
+  span {
+    font-size: 5vh;
+  }
+  
+  .check {
+    margin-right: 10px;
+    color: #42ad36;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease; /* Agrega una transición para suavizar el efecto */
+  }
+  
+  .check:hover {
+    color: green; /* Cambia el color al pasar el mouse */
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+    cursor: pointer; /* Cambia el cursor a mano */
+  }
+  .delete {
+    
+    color: #ff0000;
+    font-weight: bold;
+    position: absolute; /* Posiciona este elemento en relación con .container */
+    right: -1%;
+    top: -25%; /* Ajusta la distancia desde el borde superior */
+    font-size: 6vh;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 
+    -1px -1px 0 #000, /* Sombra negra hacia arriba izquierda */
+    1px -1px 0 #000,  /* Sombra negra hacia arriba derecha */
+    -1px 1px 0 #000,  /* Sombra negra hacia abajo izquierda */
+    1px 1px 0 #000;   /* Sombra negra hacia abajo derecha */
+}
+
+  .delete:hover {
+    color: #861d08;
+  }
+  

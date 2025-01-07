@@ -1,0 +1,20 @@
+button {
+    position: fixed; /* Fija el botón en una posición relativa a la ventana */
+    bottom: 20px; /* Posiciona el botón a 20px desde la parte inferior */
+    right: 20px; /* Posiciona el botón a 20px desde la parte izquierda */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 14px 20px; /* Relleno interno del botón */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    width: auto; /* Tamaño automático según el contenido */
+    font-size: 4vh; /* Tamaño del texto en el botón */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    border-radius: 5px; /* Borde redondeado */
+    box-sizing: border-box;
+  }
+
+  /* Efecto hover */
+  button:hover {
+    background-color: #125e11; /* Reduce la opacidad al pasar el mouse */
+  }
