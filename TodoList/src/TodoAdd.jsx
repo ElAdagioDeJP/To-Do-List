@@ -2,7 +2,7 @@ import'./TodoAdd.css'
 
 function TodoAdd() {
     return (
-        <button>+</button>
+        <button onClick={() => console.log("Le diste  click crack")}>+</button>
     )
 }
 

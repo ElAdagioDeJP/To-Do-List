@@ -1,3 +1,4 @@
+import React from 'react'
 import { TodoTitle } from './TodoTitle'
 import { TodoSearch } from './TodoSearch'
 import { TodoList } from './TodoList'
@@ -6,28 +7,35 @@ import { TodoAdd } from './TodoAdd'
 import './App.css'
 
 function App() {
-  const todos = [
+  const toDos = [
     {text: 'Buy groceries', completed: false },
-    {text: 'Walk the dog', completed: true },
+    {text: 'Walk the dog', completed: false },
     {text: 'Do the laundry', completed: false },
   ]
+  const [searchValue, setSearchValue] = React.useState('')
+  const [todos, setTodos] = React.useState(toDos)
+  const completed = todos.filter(todo => todo.completed).length
+  const incompleted = todos.length
+
+  const filterTodos = todos.filter(todo => {
+    const todoText = todo.text.toLowerCase()
+    const searchText = searchValue.toLowerCase()
+    return todoText.includes(searchText)
+  })
+
 
   return (
     <>
-    {(() => {
-      let completedCount = 0;
-      todos.forEach(todo => {
-        if (todo.completed) {
-          completedCount += 1;
-        }
-      });
-      return (
-        <TodoTitle completed={completedCount} incompleted={todos.length - completedCount} />
-      );
-    })()}
-    <TodoSearch />
+    <TodoTitle 
+    completed={completed} 
+    incompleted={incompleted}
+    />
+    <TodoSearch 
+    searchValue={searchValue}
+    setSearchValue={setSearchValue}
+    />
     <TodoList>
-      {todos.map((todo, index) => (
+      {filterTodos.map((todo, index) => (
         <TodoItem 
         key={index} 
         text={todo.text} 
