@@ -1,4 +1,4 @@
-import './TodoTitle.css'
+import '../styles/TodoTitle.css'
 
 function TodoTitle({completed , incompleted}) {
     return (
